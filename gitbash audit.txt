@@ -1,0 +1,93 @@
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git config --global user.name "ledionselimi"
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git config --global user.email "22ledionselimi@treviglas.cornwall.sch.uk"
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git config --global init.defaultBranch main
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ ssh-keygen.exe
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/grabu/.ssh/id_ed25519):
+Created directory '/c/Users/grabu/.ssh'.
+Enter passphrase for "/c/Users/grabu/.ssh/id_ed25519" (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/grabu/.ssh/id_ed25519
+Your public key has been saved in /c/Users/grabu/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:MewP8ZQAPlbcvPS9A4kedCK6XZuHdz2NfovCneji4fM grabu@epsteinpersonalcomputer
+The key's randomart image is:
++--[ED25519 256]--+
+|      .ooo       |
+|     . oo.*..    |
+|      +.=+o* o   |
+|     ..o *= + .  |
+|       oSo.= . +.|
+|      . .o= o =.o|
+|         .oooo...|
+|        .o.+ oo .|
+|        .o=E.. o.|
++----[SHA256]-----+
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ cd ~/.ssh
+
+grabu@epsteinpersonalcomputer MINGW64 ~/.ssh (main)
+$ ls
+id_ed25519  id_ed25519.pub
+
+grabu@epsteinpersonalcomputer MINGW64 ~/.ssh (main)
+$ cat id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGmzcp3Eepidx1iLexVsaOrHFDd/hKLkMY6zRJgMloKz grabu@epsteinpersonalcomputer
+
+grabu@epsteinpersonalcomputer MINGW64 ~/.ssh (main)
+$ cd ~/OneDrive/Desktop/cornwalltech
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git init
+Initialized empty Git repository in C:/Users/grabu/OneDrive/Desktop/cornwalltech/.git/
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git remote add origin https://github.com/ledionselimi/cornwalltech.git
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git pull origin main
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 901 bytes | 47.00 KiB/s, done.
+From https://github.com/ledionselimi/cornwalltech
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git add .
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git commit -m "Added hello message"
+[main 7883538] Added hello message
+ 1 file changed, 4 insertions(+)
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 336 bytes | 336.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/ledionselimi/cornwalltech.git
+   0152e04..7883538  main -> main
