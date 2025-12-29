@@ -91,3 +91,36 @@ Writing objects: 100% (3/3), 336 bytes | 336.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To https://github.com/ledionselimi/cornwalltech.git
    0152e04..7883538  main -> main
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        gitbash audit.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git add .
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git commit -m "Updated README with reflection"
+[main f043f65] Updated README with reflection
+ 2 files changed, 101 insertions(+)
+ create mode 100644 gitbash audit.txt
+
+grabu@epsteinpersonalcomputer MINGW64 ~/OneDrive/Desktop/cornwalltech (main)
+$ git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.70 KiB | 1.70 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/ledionselimi/cornwalltech.git
+   7883538..f043f65  main -> main
