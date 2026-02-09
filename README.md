@@ -14,5 +14,5 @@ Ask for help sooner.
 
 
 
-Following YouTube tutorial as I only used TechCornwall guide prior. Opened ReadMe in notepad, added text, saved ready to push back to GitHub.
+Following YouTube tutorial as I only used TechCornwall guide prior. Opened ReadMe in notepad, added text, saved ready to push back to GitHub. Adding Story 2.
 
