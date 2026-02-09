@@ -12,6 +12,8 @@ The steps were not clear enough on having to relocate after the ssh key, so I ke
 
 Ask for help sooner.
 
+Followed TechCornwall course 'TinkerCad Tutorial' and experimented with tutorial and given code of 3 LEDs flickering. Added potentiometer and pushbutton. 
+
 
 
 Following YouTube tutorial as I only used TechCornwall guide prior. Opened ReadMe in notepad, added text, saved ready to push back to GitHub. Adding Story 2.
