@@ -1,1 +1,1 @@
-Turn an LED on and off. 
+two external LEDs flash alternately.

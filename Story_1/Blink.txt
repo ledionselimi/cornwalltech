@@ -1,1 +1,1 @@
-Turn an LED on and off. 
+ LED flashes on for 1 second and off for 1 second. 

@@ -1,0 +1,1 @@
+LEDs progress through a set pattern to simulate a robot going forward for 5 seconds, stop 1 second and reverse for 2 seconds in TinkerCad on an Arduino board.
