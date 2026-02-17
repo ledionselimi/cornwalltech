@@ -26,11 +26,15 @@ Followed TinkerCad image guide showing two LEDs, two 220 ohm resistors, Arduino 
 
 
 
-Story 2a: Followed YouTube tutorial and learnt how to add variables and functions. 
+Story 2a: Followed YouTube tutorial and learnt how to add variables and functions.
 
 
 
 Story 3: Used TinkerCad Arduino board and set a pattern to 6 LEDs with three colours: green, yellow, red signifying move forward, stop, reverse. Coded using TinkerCad blocks. 1 of the red LEDs will not turn on, even after rewiring so I asked Robert for help.
 
 I have rearranged the LEDs using the image guide and everything is working as it should.
+
+
+
+Story 4: Followed YouTube tutorial and added variables and functions to my code in Story 3. Re-wrote using text. 
 
