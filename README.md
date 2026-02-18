@@ -36,5 +36,9 @@ I have rearranged the LEDs using the image guide and everything is working as it
 
 
 
-Story 4: Followed YouTube tutorial and added variables and functions to my code in Story 3. Re-wrote using text. 
+Story 4: Followed YouTube tutorial and added variables and functions to my code in Story 3. Re-wrote using text.
+
+
+
+Story 5: Wrote code to instruct the rover to move in a "snake" pattern, alternating the speeds of the left and right motors. Did not loop. 
 
