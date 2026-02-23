@@ -5,10 +5,6 @@ int stop_right = 9;
 int rev_right = 8; 
 int fwd_right = 7;
 
-#define TRIGGER_PIN  4  
-#define ECHO_PIN     5  
-#define MAX_DISTANCE 200 
-
 void setup() {
   pinMode(rev_left, OUTPUT);
   pinMode(fwd_left, OUTPUT);
@@ -16,8 +12,6 @@ void setup() {
   pinMode(stop_right, OUTPUT);
   pinMode(rev_right, OUTPUT); 
   pinMode(fwd_right, OUTPUT);
-  pinMode(TRIGGER_PIN, OUTPUT);
-  pinMode(ECHO_PIN, INPUT);
   Serial.begin(9600); 
 }
 
@@ -48,34 +42,7 @@ void Story_7() {
   while(1); 
 }
 
-void checkEnvironment() {
-  int temperature = analogRead(A0); 
-  if (temperature >= 20) {
-    Serial.print("Temp Warning: ");
-    Serial.println(temperature);
-  }
-
-  digitalWrite(TRIGGER_PIN, LOW);
-  delayMicroseconds(2);
-  digitalWrite(TRIGGER_PIN, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(TRIGGER_PIN, LOW);
-  long duration = pulseIn(ECHO_PIN, HIGH);
-  int distance = duration * 0.034 / 2;
-
-  Serial.print("Distance: ");
-  Serial.println(distance);
-  
-  if (distance > 0 && distance < 10) {
-     stopRover();
-     Serial.println("OBSTACLE DETECTED!");
-     while(1); 
-  }
-}
-
-
 void fwdRover() {
-  checkEnvironment(); 
   digitalWrite(fwd_left, HIGH);
   digitalWrite(fwd_right, HIGH);
   digitalWrite(rev_left, LOW);
@@ -94,7 +61,6 @@ void stopRover() {
 }
 
 void leftRover() {
-  checkEnvironment();
   digitalWrite(fwd_left, LOW);
   digitalWrite(fwd_right, HIGH);
   digitalWrite(rev_left, LOW);
@@ -105,7 +71,6 @@ void leftRover() {
 }
 
 void rightRover() {
-  checkEnvironment();
   digitalWrite(fwd_left, HIGH);
   digitalWrite(fwd_right, LOW);
   digitalWrite(rev_left, LOW);

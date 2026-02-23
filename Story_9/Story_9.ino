@@ -8,6 +8,8 @@ int fwd_right = 7;
 #define TRIGGER_PIN  4  
 #define ECHO_PIN     5  
 #define MAX_DISTANCE 200 
+const int TRIGGER_DOWN = 13;
+const int ECHO_DOWN = 17;
 
 void setup() {
   pinMode(rev_left, OUTPUT);
@@ -22,31 +24,10 @@ void setup() {
 }
 
 void loop() {
-  Story_7(); 
+  checkEnvironment();
+  fwdRover(); 
 }
 
-void Story_7() {
-  fwdRover();
-  delay(2000); 
-  stopRover();
-
-  for (int i = 0; i < 4; i++) {
-    leftRover();
-    fwdRover();   
-    delay(500);   
-    stopRover();
-    delay(150);
-  }
-  for (int i = 0; i < 4; i++) {
-    rightRover(); 
-    fwdRover();   
-    delay(500);   
-    stopRover();
-    delay(150);
-  }
-  stopRover();
-  while(1); 
-}
 
 void checkEnvironment() {
   digitalWrite(TRIGGER_PIN, LOW);
@@ -58,27 +39,6 @@ void checkEnvironment() {
   int distance = (duration * 0.034) / 2;
 
   if (distance > 0 && distance < 12) {
-    Serial.println("Obstacle");
-
-    stopRover();
-    delay(1000); 
-  
-    digitalWrite(rev_left, HIGH);
-    digitalWrite(rev_right, HIGH);
-    digitalWrite(fwd_left, LOW);
-    digitalWrite(fwd_right, LOW);
-    digitalWrite(stop_left, HIGH);
-    digitalWrite(stop_right, HIGH);
-    delay(1000); 
-    stopRover();
-    delay(200);
-
-    leftRover(); 
-    stopRover();
-    
-    Serial.println("Avoidance maneuvre completed.");
-  }
-  else if (distance >= 12) {
   Serial.println("Drop Detected! Emergency Stop.");
     
   stopRover();
@@ -120,24 +80,3 @@ void stopRover() {
   digitalWrite(stop_right, LOW);
 }
 
-void leftRover() {
-  checkEnvironment();
-  digitalWrite(fwd_left, LOW);
-  digitalWrite(fwd_right, HIGH);
-  digitalWrite(rev_left, LOW);
-  digitalWrite(rev_right, LOW);
-  digitalWrite(stop_left, HIGH);
-  digitalWrite(stop_right, HIGH);
-  delay(850);
-}
-
-void rightRover() {
-  checkEnvironment();
-  digitalWrite(fwd_left, HIGH);
-  digitalWrite(fwd_right, LOW);
-  digitalWrite(rev_left, LOW);
-  digitalWrite(rev_right, LOW);
-  digitalWrite(stop_left, HIGH);
-  digitalWrite(stop_right, HIGH);
-  delay(850);
-}

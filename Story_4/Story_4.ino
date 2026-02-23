@@ -5,13 +5,6 @@ int stop_right = 9;
 int fwd_right = 7;
 int rev_right = 8;
 
-// Functions
-
-void rover_forward(){
-
-}
-
-
 void setup()
 {
 pinMode(rev_left, OUTPUT);
@@ -27,22 +20,40 @@ void loop()
   flash_LED();
 }
 
+void flash_LED(){
+forward();
+delay(5000); // Wait for 5000 millisecond(s)
+stop();
+delay(1000); // Wait for 1000 millisecond(s)
+reverse();
+delay(2000); // Wait for 2000 millisecond(s)    
+}
+
 // Functions
 
-void flash_LED(){
+void forward() {
 digitalWrite(fwd_left, HIGH);
-digitalWrite(fwd_right, HIGH);
-delay(5000); // Wait for 5000 millisecond(s)
+  digitalWrite(rev_left, LOW);
+  digitalWrite(fwd_right, HIGH);
+  digitalWrite(rev_right, LOW);
+  digitalWrite(stop_left, HIGH);
+  digitalWrite(stop_right, HIGH);
+}
+
+void stop() {
 digitalWrite(fwd_left, LOW);
 digitalWrite(fwd_right,LOW);
+digitalWrite(rev_right, LOW);
+digitalWrite(rev_left, LOW);
 digitalWrite(stop_left, HIGH);
 digitalWrite(stop_right, HIGH);
-delay(1000); // Wait for 1000 millisecond(s)
-digitalWrite(stop_left, LOW);
-digitalWrite(stop_right, LOW);
-digitalWrite(rev_left, HIGH);
+}
+
+void reverse() {
+digitalWrite(fwd_left, LOW);
+digitalWrite(fwd_right,LOW);
 digitalWrite(rev_right, HIGH);
-delay(2000); // Wait for 2000 millisecond(s)
-digitalWrite(rev_left, LOW);
-digitalWrite(rev_right, LOW);           
+digitalWrite(rev_left, HIGH);
+digitalWrite(stop_left, HIGH);
+digitalWrite(stop_right, HIGH);
 }

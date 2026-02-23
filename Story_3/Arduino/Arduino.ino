@@ -1,6 +1,12 @@
 // C++ code
 //
 int animationSpeed = 0;
+int rev_left = 12; 
+int fwd_left = 11; 
+int stop_left = 10;   
+int stop_right = 9;
+int rev_right = 8; 
+int fwd_right = 7;
 
 void setup()
 {
@@ -15,21 +21,21 @@ void setup()
 void loop()
 {
   animationSpeed = 5000;
-  digitalWrite(11, HIGH);
-  digitalWrite(7, HIGH);
+  digitalWrite(fwd_left, HIGH);
+  digitalWrite(fwd_right, HIGH);
   delay(animationSpeed); // Wait for animationSpeed millisecond(s)
-  digitalWrite(11, LOW);
-  digitalWrite(7, LOW);
+  digitalWrite(fwd_left, LOW);
+  digitalWrite(fwd_right, LOW);
   animationSpeed = 1000;
-  digitalWrite(10, HIGH);
-  digitalWrite(9, HIGH);
+  digitalWrite(stop_left, HIGH);
+  digitalWrite(stop_right, HIGH);
   delay(animationSpeed); // Wait for animationSpeed millisecond(s)
-  digitalWrite(10, LOW);
-  digitalWrite(9, LOW);
+  digitalWrite(stop_left, LOW);
+  digitalWrite(stop_right, LOW);
   animationSpeed = 2000;
-  digitalWrite(12, HIGH);
-  digitalWrite(8, HIGH);
+  digitalWrite(rev_left, HIGH);
+  digitalWrite(rev_right, HIGH);
   delay(animationSpeed); // Wait for animationSpeed millisecond(s)
-  digitalWrite(12, LOW);
-  digitalWrite(8, LOW);
+  digitalWrite(rev_left, LOW);
+  digitalWrite(rev_right, LOW);
 }

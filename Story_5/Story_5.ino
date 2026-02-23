@@ -26,17 +26,16 @@ pinMode(rev_right, OUTPUT);
 
 void Story_5(){
   moveRover(255, 255); 
-  delay(2000); // Go for 2000 millisecond(s)
+  delay(2000); 
   moveRover(80, 255); 
-  delay(2000); // Go for 2000 millisecond(s)
+  delay(2000); 
   moveRover(255, 80); 
-  delay(2000); // Go for 2000 millisecond(s)
+  delay(2000); 
   moveRover(80, 255); 
-  delay(2000); // Go for 2000 millisecond(s)
+  delay(2000);  
   moveRover(255, 80); 
-  delay(2000); // Go for 2000 millisecond(s)
+  delay(2000); 
   moveRover(0, 0);
-  while(true);
 }
 
 void moveRover(int leftSpeed, int rightSpeed) {

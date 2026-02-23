@@ -20,30 +20,42 @@ void setup(){
   pinMode(fwd_right, OUTPUT);
 
   Serial.begin(115200);
-  
   attachInterrupt(digitalPinToInterrupt(LEFT_FEEDBACK), LeftMotorISR, RISING);
   attachInterrupt(digitalPinToInterrupt(RIGHT_FEEDBACK), RightMotorISR, RISING);
-
-  digitalWrite(stop_left, HIGH);  
-  digitalWrite(stop_right, HIGH);
-  digitalWrite(fwd_left, HIGH);
-  digitalWrite(fwd_right, HIGH);
 }
 
 void loop() {
-  Serial.print("Left Counter: ");
-  Serial.println(leftcounter);
+ Story_6();
+}
+
+void Story_6(){
+  forward();
+    Serial.print("Left Counter: ");
+   Serial.println(leftcounter);
 
   if (leftcounter >= TARGET_COUNT) {
-    digitalWrite(stop_left, LOW);  
-    digitalWrite(stop_right, LOW);
-    digitalWrite(fwd_left, LOW);
-    digitalWrite(fwd_right, LOW);
-
+    stop(); 
     Serial.println("2 Metres Reached. Program Terminated.");
-    delay(100); 
     exit(0);
   }
+}
+
+void forward() {
+   digitalWrite(rev_left, LOW);  
+    digitalWrite(rev_right, LOW);
+   digitalWrite(stop_left, HIGH);  
+   digitalWrite(stop_right, HIGH);
+   digitalWrite(fwd_left, HIGH);
+   digitalWrite(fwd_right, HIGH);
+}
+
+void stop() {
+   digitalWrite(rev_left, LOW);  
+    digitalWrite(rev_right, LOW);
+    digitalWrite(fwd_left, LOW);
+    digitalWrite(fwd_right, LOW);
+    digitalWrite(stop_left, LOW);
+    digitalWrite(stop_right, LOW);
 }
 
 void LeftMotorISR() {

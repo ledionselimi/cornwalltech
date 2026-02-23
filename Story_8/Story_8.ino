@@ -22,31 +22,10 @@ void setup() {
 }
 
 void loop() {
-  Story_7(); 
+  checkEnvironment();
+  fwdRover(); 
 }
 
-void Story_7() {
-  fwdRover();
-  delay(2000); 
-  stopRover();
-
-  for (int i = 0; i < 4; i++) {
-    leftRover();
-    fwdRover();   
-    delay(500);   
-    stopRover();
-    delay(150);
-  }
-  for (int i = 0; i < 4; i++) {
-    rightRover(); 
-    fwdRover();   
-    delay(500);   
-    stopRover();
-    delay(150);
-  }
-  stopRover();
-  while(1); 
-}
 
 void checkEnvironment() {
   digitalWrite(TRIGGER_PIN, LOW);
@@ -61,20 +40,13 @@ void checkEnvironment() {
     Serial.println("Obstacle");
 
     stopRover();
-    delay(1000); 
-  
-    digitalWrite(rev_left, HIGH);
-    digitalWrite(rev_right, HIGH);
-    digitalWrite(fwd_left, LOW);
-    digitalWrite(fwd_right, LOW);
-    digitalWrite(stop_left, HIGH);
-    digitalWrite(stop_right, HIGH);
+    delay(200); 
+    revRover();
     delay(1000); 
     stopRover();
     delay(200);
-
     leftRover(); 
-    stopRover();
+    fwdRover();
     
     Serial.println("Avoidance maneuvre completed.");
   }
@@ -91,6 +63,15 @@ void fwdRover() {
   digitalWrite(stop_right, HIGH);
 }
 
+void revRover() {
+   digitalWrite(rev_left, HIGH);
+    digitalWrite(rev_right, HIGH);
+    digitalWrite(fwd_left, LOW);
+    digitalWrite(fwd_right, LOW);
+    digitalWrite(stop_left, HIGH);
+    digitalWrite(stop_right, HIGH);
+}
+
 void stopRover() {
   digitalWrite(fwd_left, LOW);
   digitalWrite(fwd_right, LOW);
@@ -101,7 +82,6 @@ void stopRover() {
 }
 
 void leftRover() {
-  checkEnvironment();
   digitalWrite(fwd_left, LOW);
   digitalWrite(fwd_right, HIGH);
   digitalWrite(rev_left, LOW);
@@ -112,7 +92,6 @@ void leftRover() {
 }
 
 void rightRover() {
-  checkEnvironment();
   digitalWrite(fwd_left, HIGH);
   digitalWrite(fwd_right, LOW);
   digitalWrite(rev_left, LOW);
