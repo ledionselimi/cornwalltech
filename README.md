@@ -40,5 +40,21 @@ Story 4: Followed YouTube tutorial and added variables and functions to my code 
 
 
 
-Story 5: Wrote code to instruct the rover to move in a "snake" pattern, alternating the speeds of the left and right motors. Did not loop. 
+Story 5: Wrote code to instruct the rover to move in a "snake" pattern, alternating the speeds of the left and right motors. Did not loop.
+
+
+
+Story 6: Following the image guide, I added two pushbuttons which count the amount of interrupts for each motor of the rover. I was provided code and how many counts per metre it takes the rover. I modified it so that the rover will progress 2 metres and then terminate the program. 
+
+
+
+Story 7: The task was to drive into a tape "garage" and drive in a square figure of eight. I wrote a lot of void() blocks to make this easier; such as fwdRover, rightRover, leftRover etc. For the Story 7() I used "for" loops for accuracy in solving the story. I also magpied an example in the TechCornwall Arduino IDE course to check the temperature at the start of the Story 7() with a thermometer that is in the a0. This is in the checkEnvironment() at the start of the Story 7(). As instructed, I incorporated the given code from the NewPingExample.ino in the Arduino IDE library. This helped to include the ultrasonic sensor I added to the circuit to detect objects in front of the rover.   
+
+
+
+Story 8: I kept the Story 7() loop so that the rover is moving. I then programmed an avoidance manoeuvre the rover performs if the ultrasonic sensors detect an object within approximately 12cm. The avoidance manoeuvre is where the rover detects an object, stops, pauses, reverses and turns 90 degrees left without hitting the object. This is in the checkEnvironment() which runs at the start of the Story 7 loop.
+
+
+
+Story 9: I also kept the Story 7() loop so that the rover is moving. I added an "if"() so that the rover will want to stop if there is no ground within 5cm of the front of the robot. If it is moving forwards, when it encounters a drop in terrain over 12cm it is to stop and reverse half a second, stop and remain stopped.
 
