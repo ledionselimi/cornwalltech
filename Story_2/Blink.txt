@@ -1,1 +1,1 @@
-two external LEDs flash alternately.
+Two external LEDs flash alternately.
