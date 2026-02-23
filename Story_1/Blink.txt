@@ -1,1 +1,1 @@
- LED flashes on for 1 second and off for 1 second. 
+LED flashes on for 1 second and off for 1 second 
