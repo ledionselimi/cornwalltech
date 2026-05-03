@@ -4,7 +4,7 @@ Practicing git for CornwallTech work experience.
 
 Hello Mission to Mars!
 
-Story 1: 
+Story 1:
 
 Learnt a lot about file explorer and how to use git in the terminal with slight experience in GitHub. The steps were not clear enough on having to relocate after the ssh key, so I kept making a README file in the key folder. If I could go back I would ask for help sooner. My brother helped me complete this.
 
@@ -54,5 +54,5 @@ Story 9: I included an "if"() so that the rover will want to stop if there is no
 
 
 
-Story 10:
+Story 10: I used google gemini to create an image of what I think the in person mission to mars experience will look like!
 
